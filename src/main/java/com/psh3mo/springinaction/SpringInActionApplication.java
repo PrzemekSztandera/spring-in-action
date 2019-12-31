@@ -1,15 +1,13 @@
 package com.psh3mo.springinaction;
 
-import com.psh3mo.springinaction.knights.Knight;
-import com.psh3mo.springinaction.knights.config.KnightConfig;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.psh3mo.springinaction.chapter_1.knights.Knight;
+import com.psh3mo.springinaction.chapter_1.knights.config.KnightConfig;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @SpringBootApplication
 public class SpringInActionApplication implements ApplicationRunner {

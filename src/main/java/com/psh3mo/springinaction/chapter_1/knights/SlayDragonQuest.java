@@ -1,6 +1,4 @@
-package com.psh3mo.springinaction.knights;
-
-import java.io.PrintStream;
+package com.psh3mo.springinaction.chapter_1.knights;
 
 public class SlayDragonQuest implements Quest {
 

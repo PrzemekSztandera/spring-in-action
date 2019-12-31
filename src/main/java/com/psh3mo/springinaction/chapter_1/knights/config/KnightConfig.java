@@ -1,10 +1,10 @@
-package com.psh3mo.springinaction.knights.config;
+package com.psh3mo.springinaction.chapter_1.knights.config;
 
-import com.psh3mo.springinaction.knights.BraveKnight;
-import com.psh3mo.springinaction.knights.Knight;
-import com.psh3mo.springinaction.knights.Minstrel;
-import com.psh3mo.springinaction.knights.Quest;
-import com.psh3mo.springinaction.knights.SlayDragonQuest;
+import com.psh3mo.springinaction.chapter_1.knights.BraveKnight;
+import com.psh3mo.springinaction.chapter_1.knights.Knight;
+import com.psh3mo.springinaction.chapter_1.knights.Minstrel;
+import com.psh3mo.springinaction.chapter_1.knights.Quest;
+import com.psh3mo.springinaction.chapter_1.knights.SlayDragonQuest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
