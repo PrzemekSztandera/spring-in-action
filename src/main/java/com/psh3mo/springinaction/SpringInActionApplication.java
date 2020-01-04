@@ -4,6 +4,7 @@ import com.psh3mo.springinaction.chapter_1.knights.Knight;
 import com.psh3mo.springinaction.chapter_3.condition.MagicBean;
 import com.psh3mo.springinaction.chapter_3.dessert.MakeDessert;
 import com.psh3mo.springinaction.chapter_3.propertytest.BlankDisk;
+import com.psh3mo.springinaction.chapter_4.concert.ClassicPerformance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -19,6 +20,7 @@ public class SpringInActionApplication implements ApplicationRunner {
     private MagicBean magicBean;
     private BlankDisk blankDisk;
     private ApplicationContext applicationContext;
+    private ClassicPerformance classicPerformance;
 
 
     public static void main(String[] args) {
@@ -42,6 +44,7 @@ public class SpringInActionApplication implements ApplicationRunner {
         magicBean.printSomething();
         makeDessert.runDessert();
         System.out.println(blankDisk.toString());
+        classicPerformance.perform();
 
         // Context from XML file
         /*ClassPathXmlApplicationContext context =
@@ -71,5 +74,9 @@ public class SpringInActionApplication implements ApplicationRunner {
     @Autowired
     public void setBlankDisk(BlankDisk blankDisk) {
         this.blankDisk = blankDisk;
+    }
+    @Autowired
+    public void setClassicPerformance(ClassicPerformance classicPerformance) {
+        this.classicPerformance = classicPerformance;
     }
 }

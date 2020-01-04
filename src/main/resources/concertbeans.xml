@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--    component scan in java config class: ConcertConfig     -->
+<!--    <context:component-scan base-package="com.psh3mo.springinaction.chapter_4"/>-->
+
+    <aop:aspectj-autoproxy/>
+
+    <aop:config>
+
+        <!--        Declaring pointcuts available to multiple aspects   -->
+        <aop:pointcut id="performance" expression="execution(* com.psh3mo.springinaction.chapter_4.concert.Performance.perform(..))"/>
+        <aop:pointcut id="trackPlayed"
+            expression="execution(* com.psh3mo.springinaction.chapter_2.soundsystem.CompactDisc.playTrack(int)) and args(trackNumber)"/>
+
+        <!--        Declaring bean as aspect    -->
+        <aop:aspect ref="audience">
+            <aop:before
+                pointcut-ref="performance"
+                method="silenceCellPhone"/>
+            <aop:before
+                pointcut-ref="performance"
+                method="takeSeat"/>
+            <aop:after-returning
+                pointcut-ref="performance"
+                method="applause"/>
+            <aop:after-throwing
+                pointcut-ref="performance"
+                method="demandRefund"/>
+        </aop:aspect>
+
+        <!--        Declaring bean as aspect    -->
+        <aop:aspect ref="trackCounter">
+            <aop:before method="countTrack" pointcut-ref="trackPlayed"/>
+        </aop:aspect>
+
+    </aop:config>
+</beans>
